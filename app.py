@@ -825,7 +825,14 @@ with gr.Blocks(css="footer {visibility: hidden}") as demo:
                 outputs=[map_status, bubble_plot, dom_plot, mix_plot, share_table, fullscreen_file]
             )
 
+import os
+
 app = demo
 
 if __name__ == "__main__":
-    demo.queue().launch(server_name="0.0.0.0", server_port=int(os.getenv("PORT", 7860)))
+    port = int(os.environ.get("PORT", 7860))
+    demo.queue().launch(
+        server_name="0.0.0.0",
+        server_port=port,
+        show_error=True
+    )
