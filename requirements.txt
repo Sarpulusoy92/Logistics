@@ -1,0 +1,8 @@
+gradio>=4.37
+pandas
+openpyxl
+pyomo>=6.7
+highspy>=1.7
+numpy
+plotly
+pgeocode
